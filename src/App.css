@@ -1,38 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 .App {
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.boardContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.board {
+  width: calc(64px * 8);
+  height: calc(64px * 8);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cell img {
+  width: 64px;
+  height: 64px;
+  position: relative;
+}
+
+.black {
+  background-color: rgb(184,139,74);
+  color: #ffe9c5;
+}
+
+.white {
+  background-color: #ffe9c5;
+  color: rgb(184,139,74);
+}
+
+.selected {
+  background-color: rgb(161, 207, 115);
+}
+
+.available {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: rgb(61, 130, 40);
+}
+
+.lostFigures {
+  height: 200px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+
+  background-color: rgb(169, 169, 169);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.lostFigures img {
+  height: 20px;
+  width: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.higherCell {
+  position: relative;
+}
+
+.number {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 500;
+  bottom: 80%;
+  left: 85%;
+}
+
+.letter {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 500;
+  top: 80%;
+  right: 85%;
+}
+
+.Timer {
+  height: 150px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: 10px;
+  /* border: 1px solid red; */
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+
+  background-color: rgb(169, 169, 169);
+  color: white;
+}
+
+.Timer button {
+  height: 30px;
+  width: 100%;
+}
+
+.Timer button:hover{
+  filter: brightness(110%);
+  cursor: pointer;
+}
+
+.Timer button:active{
+  filter: brightness(90%);
+}
+
+.turn {
+  height: 30px;
+  width: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  padding: auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: bold;
+  background-color: rgb(169, 169, 169);
+  color: white;
 }
